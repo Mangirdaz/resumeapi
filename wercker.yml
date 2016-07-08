@@ -21,17 +21,3 @@ build:
     - script:
         name: copy binary
         code: cp app "$WERCKER_OUTPUT_DIR"
-
-deploy:
-    box: google/golang
-    steps:
-    # use the scratch step to build a container from scratch based on the files present
-    - internal/docker-scratch-push:
-        username: $DOCKERIO_USERNAME
-        password: $DOCKERIO_PASSWORD
-        cmd: ./app
-        tag: $WERCKER_GIT_COMMIT
-        ports: "5000"
-        repository: mangirdas/resumeapi
-        registry: https://docker.io
-
