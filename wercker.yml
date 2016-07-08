@@ -1,17 +1,21 @@
 build:
-    box: google/golang
     steps:
+
+    - setup-go-workspace
 
     # Gets the dependencies
     - script:
         name: go get
         code: |
-          go get	
+          go get
 
-    # Statically build the project
+    # Build the project
     - script:
         name: go build
-        code: CGO_ENABLED=0 go build -a -ldflags '-s' -installsuffix cgo -o app .
+        code: |
+          go build ./...
+
+
     # Copy binary to location that gets passed along to deploy
     - script:
         name: copy binary
@@ -29,3 +33,4 @@ deploy:
         ports: "5000"
         repository: mangirdas/resumeapi
         registry: https://docker.io
+
