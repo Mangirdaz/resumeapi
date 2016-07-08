@@ -37,11 +37,7 @@ build:
     # Copy binary to location that gets passed along to deploy
     - script:
         name: copy binary
-        code: cp resumeapi "$WERCKER_OUTPUT_DIR"
-
-    - script:
-        name: docker ver
-        code: docker -v     
+        code: cp resumeapi "$WERCKER_OUTPUT_DIR"     
 
 deploy:
     box: google/golang
