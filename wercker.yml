@@ -37,4 +37,4 @@ build:
     # Copy binary to location that gets passed along to deploy
     - script:
         name: copy binary
-        code: cp app "$WERCKER_OUTPUT_DIR"
+        code: cp resumeapi "$WERCKER_OUTPUT_DIR"
