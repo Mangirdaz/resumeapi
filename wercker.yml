@@ -47,7 +47,7 @@ deploy:
         username: $DOCKERIO_USERNAME
         password: $DOCKERIO_PASSWORD
         cmd: ./resumeapi
-        tag: $WERCKER_GIT_COMMIT
+        tag: test
         ports: "5000"
         repository: mangirdas/resumeapi
         registry: https://quay.io
