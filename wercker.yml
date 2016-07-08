@@ -39,6 +39,10 @@ build:
         name: copy binary
         code: cp resumeapi "$WERCKER_OUTPUT_DIR"
 
+    - script:
+        name: docker ver
+        code: docker -v     
+
 deploy:
     box: google/golang
     steps:
