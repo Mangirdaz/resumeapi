@@ -50,6 +50,6 @@ deploy:
         tag: $WERCKER_GIT_COMMIT
         ports: "5000"
         repository: mangirdas/resumeapi
-        registry: https://registry.hub.docker.com
+        registry: https://quay.io
 
         
