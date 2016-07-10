@@ -11,13 +11,6 @@ type Route struct {
 
 type Routes []Route
 
-// change to /{section}/{subsection}
-// Route{
-// 		"TodoCreate",
-// 		"GET",
-// 		"/volunteer",
-// 		TodoCreate,
-// 	},
 var routes = Routes{
 	Route{
 		"Index",
@@ -28,19 +21,25 @@ var routes = Routes{
 	Route{
 		"1",
 		"GET",
-		"/{1}/{2}/{3}",
+		"/resume/{1}",
 		TodoIndex,
 	},
 	Route{
-		"1",
+		"Notes",
 		"GET",
-		"/{1}/{2}",
-		TodoIndex,
+		"/notes",
+		GetNotes,
 	},
 	Route{
-		"1",
+		"Notes",
 		"GET",
-		"/{1}",
-		TodoIndex,
+		"/notes/{key}",
+		GetNote,
+	},
+	Route{
+		"Notes",
+		"POST",
+		"/notes",
+		AddNote,
 	},
 }
