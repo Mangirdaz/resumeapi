@@ -8,8 +8,8 @@ import (
 
 func main() {
 
+	log.Info("Starting JSON Resume backend")
 	router := NewRouter()
-
-	log.Fatal(http.ListenAndServe("localhost:"+os.Getenv("PORT"), router))
+	log.Fatal(http.ListenAndServe("0.0.0.0:"+os.Getenv("PORT"), router))
 
 }
