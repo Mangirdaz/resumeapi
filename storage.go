@@ -9,10 +9,11 @@ import (
 	"time"
 )
 
+//keep order as it is as we use it in json unmarshal. if needed add to bottom
 type Note struct {
-	Path string
-	Key  string
 	Note string
+	Key  string
+	Path string
 }
 
 type Notes struct {

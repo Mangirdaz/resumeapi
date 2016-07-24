@@ -9,6 +9,11 @@ type KeyValueStorageConfig struct {
 	Port string
 }
 
+type ErrorMessage struct {
+	Code    int
+	Message string
+}
+
 func InitKeyValueStorageConfig() KeyValueStorageConfig {
 
 	var config KeyValueStorageConfig
